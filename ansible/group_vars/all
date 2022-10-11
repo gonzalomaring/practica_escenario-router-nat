@@ -1,0 +1,9 @@
+tarjeta_vagrant: eth0
+iprouter_red1: 10.0.0.1
+tarjeta_nat: eth2
+tarjeta_red1: eth1
+mascara: 255.255.255.0
+ip_red1_iptables: 10.0.0.0/24
+ip_red1: 10.0.0.1
+ip_webserver: 10.0.0.2
+ip_host: 172.22.3.92

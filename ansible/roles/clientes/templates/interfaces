@@ -1,0 +1,20 @@
+source-directory /etc/network/interfaces.d
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# Red vagrant
+allow-hotplug {{ tarjeta_vagrant }}
+iface {{ tarjeta_vagrant }} inet dhcp
+
+auto {{ tarjeta_red1 }}
+iface {{ tarjeta_red1 }} inet static
+    address {{ ip_webserver }}
+    netmask {{ mascara }}
+    gateway {{ ip_red1 }}
+
+
+pre-down ip route del default
+pre-up ip route del default
+post-up ip route add default via {{ ip_red1 }}
